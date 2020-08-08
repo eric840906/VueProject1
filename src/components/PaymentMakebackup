@@ -1,0 +1,334 @@
+
+
+<template>
+    <div>        
+        <div class="container mt-100">
+            <table class="table" style="margin: 30px auto; width:70%">
+            <thead>
+                <th></th>
+                <th>品名</th>
+                <th width='80'>數量</th>
+                <th width='20' class="text-right">價格</th>
+            </thead>
+            <tbody>
+                <tr v-for="item in cartList.data.carts" :key="item.id">
+                <td class="align-middle">
+                    <button type="button" class="btn btn-outline-danger btn-sm" @click="removeCart(item.id)">
+                    <i class="far fa-trash-alt"></i>
+                    </button>
+                </td>
+                <td class="align-middle">
+                    {{ item.product.title }}
+                    
+                </td>
+                <td class="align-middle">{{ item.qty }}{{ item.product.unit }}</td>
+                <td class="align-middle text-right">{{ item.final_total }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td colspan="2" class="text-right">總計</td>
+                    <td class="text-right">{{ cartList.data.total }}</td>
+                </tr>
+                
+                <tr v-if="cartList.data.total!=cartList.data.final_total">
+                    <td class="text-left text-success">已套用優惠券</td>
+                    <td colspan="2" class="text-right text-success">折扣價</td>
+                    <td class="text-right text-success">{{ Math.round(cartList.data.final_total) }}</td>
+                </tr>
+                
+            </tfoot>
+            
+            
+            
+        </table>
+        </div>
+        
+        <div class="container">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link tab-item shipping-tab active" id="nav-home-tab"  href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">運送方式</a>
+                    <a class="nav-item nav-link tab-item pay-tab " id="nav-profile-tab"  href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">付款方式</a>
+                    <a class="nav-item nav-link tab-item info-tab " id="nav-contact-tab"  href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">個人資料</a>
+                </div>
+            </nav>
+            <div class="my-5 row justify-content-center">
+                <div class="tab-content" id="nav-tabContent" style="width: 50%;">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <form @submit.prevent="toPay">
+                            <div class="form-group">
+                                <label for="useremail">Email</label>
+                                <input type="email" class="form-control" name="email" id="useremail"
+                                    v-model="orderForm.user.email" placeholder="請輸入 Email" v-validate="'required|email'">
+                                <span class="text-danger" v-if="errors.has('email')">{{errors.first('email')}}</span>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="username">收件人姓名</label>
+                                <input type="text" class="form-control" name="name" id="username"
+                                    v-model="orderForm.user.name" placeholder="輸入姓名" :class="{'is-invalid': errors.has('name')}" v-validate="'required'">
+                                <span class="text-danger" v-if="errors.has('name')">請輸入姓名</span>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="usertel">收件人電話</label>
+                                <input type="tel" class="form-control" id="usertel" v-model="orderForm.user.tel" placeholder="請輸入電話">
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="useraddress">收件人地址</label>
+                                <input type="text" class="form-control" name="address" id="useraddress" v-model="orderForm.user.address"
+                                    placeholder="請輸入地址" v-validate="'required'">
+                                <span class="text-danger" v-if="errors.has('address')">地址欄位不得留空</span>
+                            </div>                           
+                                    
+                            <div class="form-group">
+                                <label for="comment">留言</label>
+                                <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="orderForm.message"></textarea>
+                            </div>
+                                <div class="text-right">
+                                <button class="btn btn-danger">送出訂單</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <form @submit.prevent="buildOrder">
+                            <div class="form-group">
+                                <label for="useremail">Email</label>
+                                <input type="email" class="form-control" name="email" id="useremail"
+                                    v-model="orderForm.user.email" placeholder="請輸入 Email" v-validate="'required|email'">
+                                <span class="text-danger" v-if="errors.has('email')">{{errors.first('email')}}</span>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="username">收件人姓名</label>
+                                <input type="text" class="form-control" name="name" id="username"
+                                    v-model="orderForm.user.name" placeholder="輸入姓名" :class="{'is-invalid': errors.has('name')}" v-validate="'required'">
+                                <span class="text-danger" v-if="errors.has('name')">請輸入姓名</span>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="usertel">收件人電話</label>
+                                <input type="tel" class="form-control" id="usertel" v-model="orderForm.user.tel" placeholder="請輸入電話">
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="useraddress">收件人地址</label>
+                                <input type="text" class="form-control" name="address" id="useraddress" v-model="orderForm.user.address"
+                                    placeholder="請輸入地址" v-validate="'required'">
+                                <span class="text-danger" v-if="errors.has('address')">地址欄位不得留空</span>
+                            </div>                           
+                                    
+                            <div class="form-group">
+                                <label for="comment">留言</label>
+                                <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="orderForm.message"></textarea>
+                            </div>
+                                <div class="text-right">
+                                <button class="btn btn-danger">送出訂單</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <form @submit.prevent="buildOrder">
+                            <div class="form-group">
+                                <label for="useremail">Email</label>
+                                <input type="email" class="form-control" name="email" id="useremail"
+                                    v-model="orderForm.user.email" placeholder="請輸入 Email" v-validate="'required|email'">
+                                <span class="text-danger" v-if="errors.has('email')">{{errors.first('email')}}</span>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="username">收件人姓名</label>
+                                <input type="text" class="form-control" name="name" id="username"
+                                    v-model="orderForm.user.name" placeholder="輸入姓名" :class="{'is-invalid': errors.has('name')}" v-validate="'required'">
+                                <span class="text-danger" v-if="errors.has('name')">請輸入姓名</span>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="usertel">收件人電話</label>
+                                <input type="tel" class="form-control" id="usertel" v-model="orderForm.user.tel" placeholder="請輸入電話">
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="useraddress">收件人地址</label>
+                                <input type="text" class="form-control" name="address" id="useraddress" v-model="orderForm.user.address"
+                                    placeholder="請輸入地址" v-validate="'required'">
+                                <span class="text-danger" v-if="errors.has('address')">地址欄位不得留空</span>
+                            </div>                           
+                                    
+                            <div class="form-group">
+                                <label for="comment">留言</label>
+                                <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="orderForm.message"></textarea>
+                            </div>
+                                <div class="text-right">
+                                <button class="btn btn-danger">送出訂單</button>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+            <!-- <form class="col-md-6" @submit.prevent="buildOrder">
+                <div class="form-group">
+                    <label for="useremail">Email</label>
+                    <input type="email" class="form-control" name="email" id="useremail"
+                        v-model="orderForm.user.email" placeholder="請輸入 Email" v-validate="'required|email'">
+                    <span class="text-danger" v-if="errors.has('email')">{{errors.first('email')}}</span>
+                </div>
+            
+                <div class="form-group">
+                    <label for="username">收件人姓名</label>
+                    <input type="text" class="form-control" name="name" id="username"
+                        v-model="orderForm.user.name" placeholder="輸入姓名" :class="{'is-invalid': errors.has('name')}" v-validate="'required'">
+                    <span class="text-danger" v-if="errors.has('name')">請輸入姓名</span>
+                </div>
+            
+                <div class="form-group">
+                    <label for="usertel">收件人電話</label>
+                    <input type="tel" class="form-control" id="usertel" v-model="orderForm.user.tel" placeholder="請輸入電話">
+                </div>
+            
+                <div class="form-group">
+                    <label for="useraddress">收件人地址</label>
+                    <input type="text" class="form-control" name="address" id="useraddress" v-model="orderForm.user.address"
+                        placeholder="請輸入地址" v-validate="'required'">
+                    <span class="text-danger" v-if="errors.has('address')">地址欄位不得留空</span>
+                </div>                           
+                        
+                <div class="form-group">
+                    <label for="comment">留言</label>
+                    <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="orderForm.message"></textarea>
+                </div>
+                    <div class="text-right">
+                    <button class="btn btn-danger">送出訂單</button>
+                </div>
+            </form> -->
+            
+        </div>
+        </div>
+        
+    </div>
+</template>
+
+
+<script>
+import $ from 'jquery'
+
+export default {
+    
+    data(){
+        return{
+           orderForm: {
+                user: {
+                    name: "",
+                    email: "",
+                    tel: "",
+                    address: ""
+                },
+                message: ""
+            },
+            cartList:{
+                data:{}
+            },
+            coupon_code:""
+        }
+
+    },
+    methods:{                    
+        
+        buildOrder(){
+            console.log(1)
+            const vm=this;    
+            vm.isLoading=true
+            const order=vm.orderForm        
+            const api=`${process.env.APIPATH}/api/${process.env.APIKEY}/order`;
+            //這裡使用Veevalidate的api來驗證表單
+            this.$validator.validate().then((valid) => {
+                if (valid) { 
+                    this.$http.post(api,{data:order}).then((response) => {
+                    console.log(response.data)
+                    vm.isLoading=false
+                        if(response.data.success){
+                            vm.$router.push(`paymentconfirm/${response.data.orderId}`)
+                        }
+                    
+                    })
+         
+                }else{
+                    console.log('資料不齊全')
+                }
+                
+            })
+            this.getCart()
+            
+            
+        },               
+        getCart(){
+            
+            const vm=this;    
+            vm.isLoading=true        
+            const api=`${process.env.APIPATH}/api/${process.env.APIKEY}/cart`;//'https://vue-course-api.hexschool.io/api/eric840906/products'
+            this.$http.get(api).then((response) => {
+            console.log(response.data)
+            vm.isLoading=false
+            vm.cartList=response.data; 
+            
+            })               
+            
+        },
+        removeCart(id){
+            const vm=this;
+            let api=`${process.env.APIPATH}/api/${process.env.APIKEY}/cart/${id}`
+            this.$http.delete(api).then((response) => {
+                console.log(response.data)
+                if(response.data.success){                            
+                console.log('刪除成功')
+                this.getCart()                
+                
+            }
+            })
+        },
+        toPay(){
+            console.log(1)
+            const vm=this;    
+            vm.isLoading=true
+            const order=vm.orderForm        
+            const api=`${process.env.APIPATH}/api/${process.env.APIKEY}/order`;
+            //這裡使用Veevalidate的api來驗證表單
+            this.$validator.validate().then((valid) => {
+                if (valid) { 
+                    
+                    $('#nav-tab a[href="#nav-profile"]').tab('show')
+         
+                }else{
+                    console.log('資料不齊全')
+                }
+                
+            })
+            this.getCart()
+            
+            
+            
+            
+        }
+        
+    },
+    mounted(){
+        
+    },
+    created(){
+        this.getCart()
+    }
+        
+    
+    
+}
+</script>
+
+<style lang="scss" scope>
+    .mt-100{
+        margin-top: 100px;
+    }
+    .tab-item{
+        cursor:not-allowed
+    }
+</style>
