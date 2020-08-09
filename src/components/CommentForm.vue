@@ -35,13 +35,13 @@
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" v-model="UserComments.grading">
                                 <label class="form-check-label mr-10" for="inlineRadio1">1</label>
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="2" v-model="UserComments.grading">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" v-model="UserComments.grading">
                                 <label class="form-check-label mr-10" for="inlineRadio2">2</label>
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="3" v-model="UserComments.grading">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3" v-model="UserComments.grading">
                                 <label class="form-check-label mr-10" for="inlineRadio3">3</label>
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="4" v-model="UserComments.grading">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4" v-model="UserComments.grading">
                                 <label class="form-check-label mr-10" for="inlineRadio4">4</label>
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="5" v-model="UserComments.grading">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5" v-model="UserComments.grading">
                                 <label class="form-check-label mr-10" for="inlineRadio5">5</label>
                             </div>
                         </div>           
