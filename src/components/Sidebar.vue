@@ -35,11 +35,14 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <router-link class="nav-link" to="/customerorder"><i class="fas fa-cart-plus"></i>模擬訂單</router-link>
+            <router-link class="nav-link" to="/dashboard/customerorder"><i class="fas fa-cart-plus"></i>模擬訂單</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/paypage"><i class="fas fa-cart-plus"></i>模擬結帳</router-link>
-          </li>           
+            <router-link class="nav-link" to="/dashboard/paypage"><i class="fas fa-cart-plus"></i>模擬結帳</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/dashboard/commentmanage"><i class="fas fa-cart-plus"></i>留言管理</router-link>
+          </li>             
         </ul>
       
     </nav>

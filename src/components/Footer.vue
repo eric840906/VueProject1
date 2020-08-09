@@ -36,10 +36,10 @@
                         <a class="pin-ic">
                             <i class="fab fa-github fa-lg white-text fa-2x"> </i>
                         </a>
-                    </div>
+                    </div>                    
                 </div>
                 <!-- Grid column -->
-
+                
                 </div>
                 <!-- Grid row-->
 
@@ -48,7 +48,8 @@
 
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3" style="font-weight: bold;">
-                個人練習用途
+                <router-link to="/login" class="nav-link" style="color: #5a5a5a;">後台管理</router-link>
+                個人練習用途                
             </div>
             <!-- Copyright -->
 

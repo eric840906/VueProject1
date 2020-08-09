@@ -4,12 +4,8 @@
 
 <main role="main">
 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+  <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    
     <div class="carousel-inner embed-responsive-21by9">
       
       <div class="carousel-item embed-responsive-item active" style="backgroundImage:url(https://images.unsplash.com/photo-1560801619-01d71da0f70c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); background-size: cover; background-position: bottom;">
@@ -17,7 +13,7 @@
           <div class="carousel-caption">
             <h1>Lächeln</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            <p><a class="btn top-notice-btn" href="#" role="button">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -26,7 +22,7 @@
           <div class="carousel-caption text-left">
             <h1>Example headline.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            <p><a class="btn top-notice-btn" href="#" role="button">Sign up today</a></p>
           </div>
         </div>
       </div>
@@ -35,7 +31,7 @@
           <div class="carousel-caption text-right">
             <h1>One more for good measure.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            <p><a class="btn top-notice-btn" href="#" role="button">Browse gallery</a></p>
           </div>
         </div>
       </div>
@@ -138,10 +134,10 @@
   <hr class="featurette-divider">
     <!-- START THE FEATURETTES -->
   <section style="backgroundImage:url(https://images.unsplash.com/photo-1589880442905-546b351e81dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); background-size: cover; background-attachment: fixed; padding: 160px 0px;background-position: center; background-repeat: no-repeat;">
-    <div class="container marketing" >
+    <div class="container marketing concept" style="color:white;">
     <h2 class="section-title">品牌理念</h2>
     <div class="row featurette">
-      <div class="col-md-7" style="color:white;">
+      <div class="col-md-7" >
         <h2 class="featurette-heading">First featurette heading. It’ll blow your mind.</h2>
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         <!-- <a class="notice-btn btn" href="#">Learn more</a> -->
@@ -168,15 +164,16 @@
   <div class="container marketing">
     <h2>Customer Comments</h2>
     <VueSlickCarousel v-bind="settings" :arrows="true">
-      <div>
+      <div v-for="item in UserComments" :key="item.id">
         <div class="col-12 text-center">
-        <img src="../assets/image/comment1.jpg" class="user-image d-inline">
-        <h2 class="grading"><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /></h2>
-        <p class="comments">有冰，則以身先之，那個北伐計劃就先暫緩吧！</p>
+        <img src="../assets/image/comment7.png" class="user-image d-inline">
+        <h2 class="grading"><font-awesome-icon  v-for="item in Number(item.data.grading)" :key="item.id" icon="star" /></h2>
+        <h4 class="user-name">{{item.data.name}}</h4>
+        <p class="comments">{{item.data.message}}</p>
         <p><a class="btn notice-btn" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
-      <div>
+      <!-- <div>
         <div class="col-12 text-center">
         <img src="../assets/image/comment4.jpg" class="user-image d-inline">
         <h2 class="grading"><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /></h2>
@@ -199,7 +196,7 @@
         <p class="comments">真的是好吃的不行！ 我不想當人啦！ JOJO！</p>
         <p><a class="btn notice-btn" href="#" role="button">View details &raquo;</a></p>
         </div>
-      </div>
+      </div> -->
       
     </VueSlickCarousel>
 
@@ -275,11 +272,48 @@ export default {
           ]
             
           
-        }
+        },
+        UserComments:[
+          {
+            data:{
+              grading:{}
+            }
+          }
+        ],
       }
+    },
+    methods:{
+      commentGet(){
+            const vm = this;
+            let api = 'http://localhost:3000/posts'
+            this.$http.get(api).then((response) => {
+                console.log(response)
+                vm.UserComments=response.data
+            }) 
+        },
+    },
+    mounted(){
+      $(window).scroll( function(){
+        $('.concept').each( function(i){
+            
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},2500);
+                    
+            }
+            
+        }); 
+      })
     },
     beforeCreate(){
       $('#loadingModal').modal('hide')    
+    },
+    created(){
+      this.commentGet();
     }
 }
 </script>
@@ -299,6 +333,9 @@ export default {
 .comments, .section-title{
   font-family: 'cwTeXYen', sans-serif;
 }
+.user-name{
+  font-family: 'cwTeXYen', sans-serif ;
+}
 
 body {
   
@@ -310,7 +347,9 @@ body {
   width: 140px; 
   border-radius: 150px;
 }
-
+.concept{
+  opacity: 0;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -336,6 +375,37 @@ body {
   height: 32rem;
 }
 
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition:0.5s opacity;
+        }
+        
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .carousel-control {
+        z-index: 2;
+    }
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -355,6 +425,7 @@ body {
 .grading{
   margin: 8px 0;
   color: #ffc900;
+  font-size: 25px;
 }
 
 /* Featurettes
@@ -380,13 +451,26 @@ body {
 }
 
 .notice-btn{
-  font-size: 20px;
+    font-size: 20px;
+    background-color: transparent;
     border: 1px solid black;
     color: black;
     &:hover{
         border-color: white;
         color: #ffdf76;
         background-color: #494848;
+    }
+}
+
+.top-notice-btn{
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    &:hover{
+        
+        color: #ffdf76;
+        background-color: #00000075;
     }
 }
 

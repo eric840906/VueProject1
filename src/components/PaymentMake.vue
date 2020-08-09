@@ -144,7 +144,7 @@
             <div class="text-right">
                 <button class="btn btn-danger" style="width:100%;">送出訂單</button>
             </div>
-            </form>
+        </form>
             
         </div>
         </div>

@@ -120,7 +120,7 @@ export default {
                     vm.loadingMessage='訂單成功送出，將回到首頁'
                     setTimeout( () => $('#loadingModal').modal('toggle'),10000)           
                     this.getOrder()                        
-                    setTimeout( () => vm.$router.push('/home'), 5000);
+                    setTimeout( () => vm.$router.push('/'), 5000);
                                                          
                     
                     

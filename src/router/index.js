@@ -19,6 +19,8 @@ import PaymentShipping from '@/components/PaymentShipping'
 import CouponJackpot from '@/components/CouponJackpot'
 import Contact from '@/components/Contact'
 import Storeinfo from '@/components/Storeinfo'
+import CommentForm from '@/components/CommentForm'
+import CommentManage from '@/components/CommentManage'
 
 
 
@@ -41,6 +43,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/commentform',
+      name: 'CommentForm',
+      component: CommentForm
     },
     {
       path: '/shoppage',
@@ -151,6 +158,12 @@ export default new Router({
           path: 'customercheckout/:orderId',   //要加上/:orderId動態帶入api抓來的訂單ID形成結帳頁面，少了冒號會因為網址被nav guard判斷不存在而跑回login
           name: 'CustomerCheckout',
           component: CustomerCheckout,
+          
+        },
+        {
+          path: 'commentmanage',   //要加上/:orderId動態帶入api抓來的訂單ID形成結帳頁面，少了冒號會因為網址被nav guard判斷不存在而跑回login
+          name: 'CommentManage',
+          component: CommentManage,
           
         },
           

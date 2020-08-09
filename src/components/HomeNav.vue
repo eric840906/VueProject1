@@ -12,6 +12,7 @@
                 <router-link class="nav-item nav-link" to="/shoppage/shoppingmain">商品列表</router-link>
                 <router-link class="nav-item nav-link" to="/couponjackpot" >優惠資訊</router-link>
                 <router-link class="nav-item nav-link" to="/storeinfo" >門市資訊</router-link>
+                <router-link class="nav-item nav-link" to="/commentform" >留言板</router-link>
                 <router-link class="nav-item nav-link" to="/contact">聯絡我們</router-link>
                 </div>
             </div>

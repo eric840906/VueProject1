@@ -1,9 +1,44 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  "posts": [
+    {
+      "data": {
+        "email": "eric840906@hotmail.com.tw",
+        "name": "zo6596",
+        "grading": "5",
+        "message": "真的是太好吃啦，下次還會來"
+      },
+      "id": 1
+    },
+    {
+      "data": {
+        "email": "eric840906@hotmail.com.tw",
+        "name": "eric",
+        "grading": "4",
+        "message": "冰真的好吃，不過等太久了扣1星"
+      },
+      "id": 2
+    },
+    {
+      "data": {
+        "email": "eric840906@hotmail.com.tw",
+        "name": "吃冰肥宅",
+        "grading": "5",
+        "message": "太好吃了 以後一定會常來"
+      },
+      "id": 3
+    },
+    {
+      "data": {
+        "email": "eric840906@hotmail.com.tw",
+        "name": "EC",
+        "grading": "5",
+        "message": "真是出乎意料的好吃啊! 加油!"
+      },
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
   }
+}
