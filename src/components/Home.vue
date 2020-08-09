@@ -169,8 +169,7 @@
         <img src="../assets/image/comment7.png" class="user-image d-inline">
         <h2 class="grading"><font-awesome-icon  v-for="item in Number(item.data.grading)" :key="item.id" icon="star" /></h2>
         <h4 class="user-name">{{item.data.name}}</h4>
-        <p class="comments">{{item.data.message}}</p>
-        <p><a class="btn notice-btn" href="#" role="button">View details &raquo;</a></p>
+        <p class="comments">{{item.data.message}}</p>        
         </div>
       </div>
       <!-- <div>

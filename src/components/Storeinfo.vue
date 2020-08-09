@@ -163,6 +163,18 @@ export default {
 *{
     font-family: 'cwTeXYen', sans-serif;
 }
+.info-list::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+}
+.info-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: transparent;
+}
+ 
+.info-list::-webkit-scrollbar-thumb {
+    background-image: radial-gradient(#ffb95c8c, transparent);
+    outline: 1px solid white;
+}
 
 
 .jumbotron{
@@ -179,7 +191,7 @@ export default {
 }
 
 .info{
-    border: 1px solid;
+    
     border-radius: 20px;
     padding: 0px 14px;
     margin-bottom: 20px;

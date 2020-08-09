@@ -50,7 +50,7 @@ export default new Router({
       component: CommentForm
     },
     {
-      path: '/',
+      path: '/shoppage',
       name: 'ShopPage',
       component: ShopPage,
       children:[

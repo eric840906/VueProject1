@@ -22,7 +22,10 @@
                             <div class="card">
                                 <img src="https://images.unsplash.com/photo-1585418244931-4cb811b61092?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
+                                    <div class="d-flex">
+                                        <h5 class="card-title">Baron.H</h5> <h6 class="position ml-auto">CEO</h6>
+                                    </div>
+                                    <hr style="margin-top:0;">
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-around">                                        
@@ -41,7 +44,10 @@
                                 </div>
                                 
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
+                                    <div class="d-flex">
+                                        <h5 class="card-title">Mikaela.L</h5> <h6 class="position ml-auto">COO</h6>
+                                    </div>
+                                    <hr style="margin-top:0;">
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-around">                                        
@@ -57,7 +63,10 @@
                             <div class="card">
                                 <img src="https://images.unsplash.com/photo-1551467302-8e70f83e8ec6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
+                                    <div class="d-flex">
+                                        <h5 class="card-title">Maria.C</h5> <h6 class="position ml-auto">CMO</h6>
+                                    </div>
+                                    <hr style="margin-top:0;">
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-around">                                        
@@ -74,7 +83,10 @@
                                 <div class="card">
                                     <img src="https://images.unsplash.com/photo-1585418244931-4cb811b61092?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
+                                        <div class="d-flex">
+                                        <h5 class="card-title">Baron.H</h5> <h6 class="position ml-auto">CEO</h6>
+                                    </div>
+                                    <hr style="margin-top:0;">
                                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     </div>
                                     <div class="card-footer d-flex justify-content-around">                                        
@@ -88,7 +100,10 @@
                                 <div class="card">
                                     <img src="https://images.unsplash.com/photo-1547147607-6eab7b49f3ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
+                                        <div class="d-flex">
+                                        <h5 class="card-title">Mikaela.L</h5> <h6 class="position ml-auto">COO</h6>
+                                    </div>
+                                    <hr style="margin-top:0;">
                                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     </div>
                                     <div class="card-footer d-flex justify-content-around">                                        
@@ -102,7 +117,10 @@
                                 <div class="card">
                                     <img src="https://images.unsplash.com/photo-1551467302-8e70f83e8ec6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
+                                        <div class="d-flex">
+                                        <h5 class="card-title">Maria.C</h5> <h6 class="position ml-auto">CMO</h6>
+                                    </div>
+                                    <hr style="margin-top:0;">
                                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     </div>
                                     <div class="card-footer d-flex justify-content-around">                                        
@@ -220,6 +238,14 @@ font-family: 'cwTeXYen', sans-serif;
 #carouselTeam{
     display:none;
     position:absolute;
+}
+.position{
+    border: 1px solid black;
+    border-radius: 7px;
+    margin-bottom: 5px;
+    padding: 5px 8px;
+    background-color: black;
+    color: #ffdb27;
 }
 
 @media (max-width: 425px){
