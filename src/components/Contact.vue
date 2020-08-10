@@ -161,35 +161,8 @@ export default {
         Navbar,
         Gotop,
         Footer
-    },
-    mounted(){
-    //     var $item = $('.card-frame'), //Cache your DOM selector
-    //         visible = 1, //Set the number of items that will be visible
-    //         index = 0, //Starting index
-    //         endIndex = ( $item.length / visible ) - 1, //End index
-    //         shiftLength=$item.width()+30
-    //     $('#right-arrow').click(function(e){
-    //         if(index < endIndex ){
-    //             index++;
-    //             $item.animate({'left':'-='+shiftLength});
-                
-                
-    //         }
-            
-            
-            
-    //     });
-        
-    //     $('#left-arrow').click(function(){
-    //         if(index > 0){
-    //             index--;            
-    //             $item.animate({'left':'+='+shiftLength});
-                
-    //         }
-            
-            
-    //     });
-    },
+    }
+    
 }
 </script>
 

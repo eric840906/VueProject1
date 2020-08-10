@@ -236,6 +236,7 @@ export default {
                         "slidesToScroll": 1,//切換下一頁時移動1個
                 }
                 },
+               
                 
             ]
                 

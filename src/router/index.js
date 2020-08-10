@@ -15,7 +15,6 @@ import ShopProduct from '@/components/ShopProduct'
 import PaymentMake from '@/components/PaymentMake'
 import PaymentPage from '@/components/PaymentPage'
 import PaymentConfirm from '@/components/PaymentConfirm'
-import PaymentShipping from '@/components/PaymentShipping'
 import CouponJackpot from '@/components/CouponJackpot'
 import Contact from '@/components/Contact'
 import Storeinfo from '@/components/Storeinfo'
@@ -94,13 +93,7 @@ export default new Router({
           path: 'paymentmake',
           name: 'PaymentMake',
           component: PaymentMake,
-        },
-        {
-          
-          path: 'paymentshipping',
-          name: 'PaymentShipping',
-          component: PaymentShipping,
-        },
+        },        
         {
           path: 'paymentconfirm/:orderId',   //要加上/:orderId動態帶入api抓來的訂單ID形成結帳頁面，少了冒號會因為網址被nav guard判斷不存在而跑回login
           name: 'PaymentConfirm',

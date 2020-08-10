@@ -58,7 +58,7 @@
   
   <hr class="featurette-divider">
   <div class="container marketing">
-    <h2 class="section-title">店內環境</h2>
+    <h2>Environment</h2>
     
     <div class="row featurette">
     <div class="col-md-4 mb-10"><img class="img-fluid" src="https://images.unsplash.com/photo-1577056922428-a511301a562d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=635&q=80" alt=""></div>
@@ -73,10 +73,10 @@
     <!-- START THE FEATURETTES -->
   <section style="backgroundImage:url(https://images.unsplash.com/photo-1589880442905-546b351e81dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); background-size: cover; background-attachment: fixed; padding: 160px 0px;background-position: center; background-repeat: no-repeat;">
     <div class="container marketing concept" style="color:white;">
-    <h2 class="section-title">品牌理念</h2>
+    <h1>Concept</h1>
     <div class="row featurette">
       <div class="col-md-7" >
-        <h2 class="featurette-heading">If life is a bowl of dark ice cream, small moments we enjoyed are colorful sprinkles all over it.</h2>        
+        <h3 class="featurette-heading">If life is a bowl of dark ice cream, small moments we enjoyed are colorful sprinkles all over it.</h3>        
         <!-- <a class="notice-btn btn" href="#">Learn more</a> -->
       </div>      
     </div>
