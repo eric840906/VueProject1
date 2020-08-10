@@ -12,26 +12,28 @@
         <div class="container">
           <div class="carousel-caption">
             <h1>Lächeln</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn top-notice-btn" href="#" role="button">Learn more</a></p>
+            <h3>Facts are irrelevant</h3>
+            <h3>What matters is what the consumer believes</h3>
           </div>
         </div>
       </div>
       <div class="carousel-item embed-responsive-item" style="backgroundImage:url(https://images.unsplash.com/photo-1560801530-34efebfecba8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); background-size: cover; background-position: center;">
         <div class="container">
           <div class="carousel-caption text-left">
-            <h1>Example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn top-notice-btn" href="#" role="button">Sign up today</a></p>
+            <h1>Delicacies</h1>
+            <h3>You can't buy happiness, </h3>
+            <h3>but you can buy ice cream and that is pretty much the same thing</h3>
+            <router-link class="btn top-notice-btn" to="/shoppage/shoppingmain"><h2 class="mr-0">View Products</h2></router-link>            
           </div>
         </div>
       </div>
       <div class="carousel-item embed-responsive-item" style="backgroundImage:url(https://images.unsplash.com/photo-1515037028865-0a2a82603f7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1321&q=80); background-size: cover; background-position: bottom;">
         <div class="container">
           <div class="carousel-caption text-right">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn top-notice-btn" href="#" role="button">Browse gallery</a></p>
+            <h1>Event</h1>
+            <h2>Life is like an ice cream,</h2>
+            <h2>enjoy it before it melts</h2>
+            <router-link class="btn top-notice-btn" to="/couponjackpot"><h2 class="mr-0">Grab a coupon</h2></router-link>            
           </div>
         </div>
       </div>
@@ -53,75 +55,11 @@
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
-  <!-- <div class="container marketing">
-    <h2>Cusotomer Comments</h2>
-    
-    <div class="row">
-      <div class="col-lg-4">
-        <img src="../assets/image/comment1.jpg" alt="" style="width: 140px; border-radius: 150px;">
-        <h2 class="grading"><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /></h2>
-        <p class="comments">有冰，則以身先之，那個北伐計劃就先暫緩吧！</p>
-        <p><a class="btn notice-btn" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-lg-4">
-        <img src="../assets/image/comment4.jpg" alt="" style="width: 140px; border-radius: 150px;">
-        <h2 class="grading"><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /></h2>
-        <p class="comments">真的是好吃的不行！ 我不想當人啦！ JOJO！</p>
-        <p><a class="btn notice-btn" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-lg-4">
-        <img src="../assets/image/comment3.jpg" alt="" style="width: 140px; border-radius: 150px;">
-        <h2 class="grading"><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /></h2>
-        <p class="comments">對冰當歌，人生幾何？譬如朝露，去日苦多。 慨當以慷，憂思難忘。何以解憂？唯有<span style="font-family: 'Tangerine', cursive;">Lächeln</span>。</p>
-        <p><a class="btn notice-btn" href="#" role="button">View details &raquo;</a></p>
-      </div>
-    </div>
-  </div>  -->
+  
   <hr class="featurette-divider">
   <div class="container marketing">
     <h2 class="section-title">店內環境</h2>
-    <!-- <div id="carouselTeam" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-          <div class="carousel-item active" data-interval="10000">
-            <div class="row featurette">
-              <div class="col-md-4 mb-10"><img class="img-fluid" src="https://images.unsplash.com/photo-1577056922428-a511301a562d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=635&q=80" alt=""></div>
-              <div class="col-md-4 row" style="padding: 0; margin: 0;">
-                <div class="col-md-12 d-flex" style="margin-bottom: 10px;"><img class="img-fluid" src="https://images.unsplash.com/photo-1544739313-6fad02872377?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""></div>
-                <div class="col-md-12 d-flex mb-10"><img class="img-fluid" src="https://images.unsplash.com/photo-1570646982637-f6a903ca9e5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt=""></div>
-              </div>
-              <div class="col-md-4"><img class="img-fluid" src="https://images.unsplash.com/photo-1582926088856-99b2cd02ac13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt=""></div>
-            </div>
-          </div>
-          <div class="carousel-item" data-interval="2000">
-            <div class="row featurette">
-              <div class="col-md-4 mb-10"><img class="img-fluid" src="https://images.unsplash.com/photo-1577056922428-a511301a562d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=635&q=80" alt=""></div>
-              <div class="col-md-4 row" style="padding: 0; margin: 0;">
-                <div class="col-md-12 d-flex" style="margin-bottom: 10px;"><img class="img-fluid" src="https://images.unsplash.com/photo-1544739313-6fad02872377?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""></div>
-                <div class="col-md-12 d-flex mb-10"><img class="img-fluid" src="https://images.unsplash.com/photo-1570646982637-f6a903ca9e5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt=""></div>
-              </div>
-              <div class="col-md-4"><img class="img-fluid" src="https://images.unsplash.com/photo-1582926088856-99b2cd02ac13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt=""></div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row featurette">
-              <div class="col-md-4 mb-10"><img class="img-fluid" src="https://images.unsplash.com/photo-1577056922428-a511301a562d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=635&q=80" alt=""></div>
-              <div class="col-md-4 row" style="padding: 0; margin: 0;">
-                <div class="col-md-12 d-flex" style="margin-bottom: 10px;"><img class="img-fluid" src="https://images.unsplash.com/photo-1544739313-6fad02872377?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt=""></div>
-                <div class="col-md-12 d-flex mb-10"><img class="img-fluid" src="https://images.unsplash.com/photo-1570646982637-f6a903ca9e5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt=""></div>
-              </div>
-              <div class="col-md-4"><img class="img-fluid" src="https://images.unsplash.com/photo-1582926088856-99b2cd02ac13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt=""></div>
-            </div>
-          </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselTeam" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselTeam" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-      </a>
-    </div> -->
+    
     <div class="row featurette">
     <div class="col-md-4 mb-10"><img class="img-fluid" src="https://images.unsplash.com/photo-1577056922428-a511301a562d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=635&q=80" alt=""></div>
     <div class="col-md-4 row" style="padding: 0; margin: 0;">
@@ -138,27 +76,12 @@
     <h2 class="section-title">品牌理念</h2>
     <div class="row featurette">
       <div class="col-md-7" >
-        <h2 class="featurette-heading">First featurette heading. It’ll blow your mind.</h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <h2 class="featurette-heading">If life is a bowl of dark ice cream, small moments we enjoyed are colorful sprinkles all over it.</h2>        
         <!-- <a class="notice-btn btn" href="#">Learn more</a> -->
       </div>      
     </div>
   </div>
-  </section>
-  
-    
-    
-
-  
-  
-  
-
-
-
-
-
-
-    
+  </section>  
 
   <hr class="featurette-divider">
   <div class="container marketing">
@@ -172,45 +95,9 @@
         <p class="comments">{{item.data.message}}</p>        
         </div>
       </div>
-      <!-- <div>
-        <div class="col-12 text-center">
-        <img src="../assets/image/comment4.jpg" class="user-image d-inline">
-        <h2 class="grading"><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /></h2>
-        <p class="comments">真的是好吃的不行！ 我不想當人啦！ JOJO！</p>
-        <p><a class="btn notice-btn" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-      <div>
-        <div class="col-12 text-center">
-        <img src="../assets/image/comment3.jpg" class="user-image d-inline">
-        <h2 class="grading"><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /></h2>
-        <p class="comments">對冰當歌，人生幾何？譬如朝露，去日苦多。 慨當以慷，憂思難忘。何以解憂？唯有<span style="font-family: 'Tangerine', cursive;">Lächeln</span>。</p>
-        <p><a class="btn notice-btn" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-      <div>
-        <div class="col-12 text-center">
-        <img src="../assets/image/comment4.jpg" class="user-image d-inline">
-        <h2 class="grading"><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /><font-awesome-icon icon="star" /></h2>
-        <p class="comments">真的是好吃的不行！ 我不想當人啦！ JOJO！</p>
-        <p><a class="btn notice-btn" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div> -->
-      
+            
     </VueSlickCarousel>
-
-    <!-- <div class="row featurette">
-      <div class="col-md-7 col-12">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        <a class="notice-btn btn" href="#">Learn more</a>
-      </div>
-      <div class="col-md-5 col-12">
-        <div class="imgframe">
-            <div class="homeImage" style="backgroundImage:url(https://images.unsplash.com/photo-1557758403-b937f2d5dc47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80)"></div>
-        </div>
-      </div>
-    </div> -->
+    
   </div>
   
 
@@ -301,7 +188,7 @@ export default {
             /* If the object is completely visible in the window, fade it it */
             if( bottom_of_window > bottom_of_object ){
                 
-                $(this).animate({'opacity':'1'},2500);
+                $(this).animate({'opacity':'1'},1500);
                     
             }
             
@@ -329,6 +216,12 @@ export default {
   font-family: 'Tangerine', cursive;
   
 }
+h1{
+  font-size: 4.5rem;
+}
+.mr-0{
+  margin: 0;
+}
 .comments, .section-title{
   font-family: 'cwTeXYen', sans-serif;
 }
@@ -349,6 +242,7 @@ body {
 .concept{
   opacity: 0;
 }
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -465,14 +359,21 @@ body {
     font-size: 20px;
     background-color: transparent;
     border: none;
-    color: white;
+    
+    animation: color-change 5s infinite;
     &:hover{
-        
+        animation: none;
         color: #ffdf76;
         background-color: #00000075;
     }
 }
-
+@keyframes color-change {
+  0% { color: transparent;}
+  50%{ color: rgb(139, 34, 1);}
+  75% { color: white; }
+  100%{ color: transparent;}  
+  
+}
 
 
 /* RESPONSIVE CSS

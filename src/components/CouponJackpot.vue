@@ -19,7 +19,75 @@
                     <!-- <a href="" @click.prevent="startDrawing">點擊開始抽優惠</a> -->
                     
                     <div class="card-deck mb-3 text-center">
-                        <div class="card mb-4 shadow-sm" style="background: antiquewhite;">
+                        <VueSlickCarousel v-bind="settings">
+                            <div class="card mb-4 shadow-sm card-background">
+                                <div class="front face"></div>                                                          
+                                <div class="back">
+                                    <div class="card-header" :class="{'small-discount-title':coupons[0].discount<=20, 'big-discount-title':coupons[0].discount>=50, 'normal-discount-title': coupons[0].discount<50 && coupons[0].discount>20}">
+                                        <h4 class="my-0 font-weight-normal">{{coupons[0].title}}</h4>
+                                    </div>
+                                    <div class="card-body" :class="{'small-discount-title':coupons[0].discount<=20, 'big-discount-title':coupons[0].discount>=50, 'normal-discount-title': coupons[0].discount<50 && coupons[0].discount>20}">
+                                        <h1 class="card-title pricing-card-title">{{coupons[0].discount}}%off</h1>
+                                        <h2>優惠代碼</h2>
+                                        <input type="text" class="code" :value="coupons[0].code" readonly="readonly">
+                                        <h3>使用期限:{{coupons[0].due_date}}</h3>
+                                        <a class="btn btn-lg btn-block btn-outline-primary" @click.prevent="copyCode">複製優惠碼</a>
+                                        
+                                    </div>
+                                    
+                                    <div class="card-footer">
+                                        
+                                        <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
+                                        
+                                    </div>                                
+                                </div>                            
+                            </div>
+                            <div class="card mb-4 shadow-sm card-background">
+                                <div class="front face"></div>                                                          
+                                <div class="back">
+                                    <div class="card-header" :class="{'small-discount-title':coupons[1].discount<=20, 'big-discount-title':coupons[1].discount>=50, 'normal-discount-title': coupons[1].discount<50 && coupons[1].discount>20}">
+                                        <h4 class="my-0 font-weight-normal">{{coupons[1].title}}</h4>
+                                    </div>
+                                    <div class="card-body" :class="{'small-discount-title':coupons[1].discount<=20, 'big-discount-title':coupons[1].discount>=50, 'normal-discount-title': coupons[1].discount<50 && coupons[1].discount>20}">
+                                        <h1 class="card-title pricing-card-title">{{coupons[1].discount}}%off</h1>
+                                        <h2>優惠代碼</h2>
+                                        <input type="text" class="code" :value="coupons[1].code" readonly="readonly">
+                                        <h3>使用期限:{{coupons[1].due_date}}</h3>
+                                        <a class="btn btn-lg btn-block btn-outline-primary" @click.prevent="copyCode">複製優惠碼</a>
+                                        
+                                    </div>
+                                    
+                                    <div class="card-footer">
+                                        
+                                        <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
+                                        
+                                    </div>                                
+                                </div>                            
+                            </div>
+                            <div class="card mb-4 shadow-sm card-background">
+                                <div class="front face"></div>                                                          
+                                <div class="back">
+                                    <div class="card-header" :class="{'small-discount-title':coupons[2].discount<=20, 'big-discount-title':coupons[2].discount>=50, 'normal-discount-title': coupons[2].discount<50 && coupons[2].discount>20}">
+                                        <h4 class="my-0 font-weight-normal">{{coupons[2].title}}</h4>
+                                    </div>
+                                    <div class="card-body" :class="{'small-discount-title':coupons[2].discount<=20, 'big-discount-title':coupons[2].discount>=50, 'normal-discount-title': coupons[2].discount<50 && coupons[2].discount>20}">
+                                        <h1 class="card-title pricing-card-title">{{coupons[2].discount}}%off</h1>
+                                        <h2>優惠代碼</h2>
+                                        <input type="text" class="code" :value="coupons[2].code" readonly="readonly">
+                                        <h3>使用期限:{{coupons[2].due_date}}</h3>
+                                        <a class="btn btn-lg btn-block btn-outline-primary" @click.prevent="copyCode">複製優惠碼</a>
+                                        
+                                    </div>
+                                    
+                                    <div class="card-footer">
+                                        
+                                        <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
+                                        
+                                    </div>                                
+                                </div>                            
+                            </div>
+                        </VueSlickCarousel>
+                        <!-- <div class="card mb-4 shadow-sm" style="background: antiquewhite;">
                             <div class="front face" style="backgroundImage:url(https://i.pinimg.com/564x/c1/59/b4/c159b4738dae9c9d8d6417228024de8d.jpg)"></div>                                                          
                             <div class="back">
                                 <div class="card-header" :class="{'small-discount-title':coupons[0].discount<=20, 'big-discount-title':coupons[0].discount>=50, 'normal-discount-title': coupons[0].discount<50 && coupons[0].discount>20}">
@@ -72,7 +140,7 @@
                                     <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
                                 </div>                                
                             </div>                            
-                        </div>
+                        </div> -->
                     </div>
                     
                 </div>
@@ -140,14 +208,39 @@ import $ from 'jquery'
 import Navbar from './HomeNav'
 import Gotop from './GoTop'
 import Footer from './Footer'
+import VueSlickCarousel from 'vue-slick-carousel'
 export default {
     components:{
         Navbar,
         Gotop,
-        Footer
+        Footer,
+        VueSlickCarousel
     },
     data(){
         return{
+                settings:{
+            "arrows": false,
+            "dots": true,
+            "infinite": true,
+            "slidesToShow": 3,
+            "slidesToScroll": 1,
+            "autoplay": false,
+            "speed": 300,
+            "autoplaySpeed": 1000,
+            "cssEase": "linear",
+            "responsive":[
+                {
+                "breakpoint": 500,
+                "settings": {
+                        "slidesToShow": 1, //一次顯示1個
+                        "slidesToScroll": 1,//切換下一頁時移動1個
+                }
+                },
+                
+            ]
+                
+            
+            },
             coupons:[
                 {
                     'due_date':'2020-09-06',
@@ -234,7 +327,7 @@ export default {
             })
         },
         getCoupon(){
-            const vm=this
+            const vm=this;
             for(let i=0; i<3; i++){
                 let a=parseInt(Math.random()*7);
                 vm.randomCoupons.push(vm.coupons[a])
@@ -245,6 +338,21 @@ export default {
             $('.start-btn').fadeOut();
             $('.card-deck').fadeIn();
 
+        },
+        copyCode(e){            
+            let couponCode = $(e.currentTarget).closest('.card-body').find('.code')            
+            couponCode.select()
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                alert('Testing code was copied ' + msg);
+            } catch (err) {
+                alert('Oops, unable to copy');
+            }
+            
+            
+
         }
         
 
@@ -254,14 +362,21 @@ export default {
         $(".card").click(function(e){
             $(e.currentTarget).addClass("flip");
             
-            $(e.currentTarget).siblings().off() //翻一張牌之後停止對所有兄弟的監聽
+            $(".card").off() //翻一張牌之後停止對所有兄弟的監聽
             
             
         });
         $('#start-modal').modal('show')
         $('body').click(function(e){
             $('#start-modal').modal('hide')
-        })
+        });
+
+        // $(".copybtn").click(function(e){
+        //     e.preventDefault();            
+        //     $(e.currentTarget).closest('.code').document.execCommand('copy');
+        // })
+
+
         
     },
     created(){        
@@ -339,13 +454,21 @@ export default {
     @include flip();
     cursor: pointer;
     display: inline-block;
-        
+    width: auto !important;
     border-radius: 15px;
+}
+
+.card-background{
+    background: antiquewhite;
 }
 
 .front{
     background-position: center;
+    background-image:url(https://i.pinimg.com/564x/c1/59/b4/c159b4738dae9c9d8d6417228024de8d.jpg)
 }
+.slick-slide {
+    margin: 0 10px;
+  }
 
 @media(min-width: 1024px){
     .card{
@@ -407,15 +530,22 @@ export default {
     color: #ff9a00;
 }
 
+.code{
+    text-align: center;
+    border: none;
+    background: none;
+}
 
 .card-footer{
-    &:hover{
+    
         .btn{
+            &:hover{
             background-color: black;
             border: none;
             color: #ffdf76;
+            }
         }
-    }
+    
 }
 
 </style>

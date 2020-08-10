@@ -23,10 +23,10 @@
                                 <img src="https://images.unsplash.com/photo-1585418244931-4cb811b61092?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <div class="d-flex">
-                                        <h5 class="card-title">Baron.H</h5> <h6 class="position ml-auto">CEO</h6>
+                                        <h5 class="card-title">B.H.Valdez</h5> <h6 class="position ml-auto">CEO</h6>
                                     </div>
                                     <hr style="margin-top:0;">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text">A brand is no longer what we tell the consumer it is -- it is what consumers tell each other it is</p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-around">                                        
                                     <a href=""><font-awesome-icon :icon="['fab', 'facebook']" /></a>
@@ -45,10 +45,10 @@
                                 
                                 <div class="card-body">
                                     <div class="d-flex">
-                                        <h5 class="card-title">Mikaela.L</h5> <h6 class="position ml-auto">COO</h6>
+                                        <h5 class="card-title">M.L.Valencia</h5> <h6 class="position ml-auto">COO</h6>
                                     </div>
                                     <hr style="margin-top:0;">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text">People often say that motivation doesn’t last. Well, neither does bathing. That’s why we recommend it daily</p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-around">                                        
                                     <a href=""><font-awesome-icon :icon="['fab', 'facebook']" /></a>
@@ -64,10 +64,10 @@
                                 <img src="https://images.unsplash.com/photo-1551467302-8e70f83e8ec6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <div class="d-flex">
-                                        <h5 class="card-title">Maria.C</h5> <h6 class="position ml-auto">CMO</h6>
+                                        <h5 class="card-title">C.S.Cassidy</h5> <h6 class="position ml-auto">CMO</h6>
                                     </div>
                                     <hr style="margin-top:0;">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text">If you are an artist, learn science. If you are a scientist, cultivate art</p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-around">                                        
                                     <a href=""><font-awesome-icon :icon="['fab', 'facebook']" /></a>
@@ -84,10 +84,10 @@
                                     <img src="https://images.unsplash.com/photo-1585418244931-4cb811b61092?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <div class="d-flex">
-                                        <h5 class="card-title">Baron.H</h5> <h6 class="position ml-auto">CEO</h6>
+                                        <h5 class="card-title">B.H.Valdez</h5> <h6 class="position ml-auto">CEO</h6>
                                     </div>
                                     <hr style="margin-top:0;">
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text">A brand is no longer what we tell the consumer it is -- it is what consumers tell each other it is</p>
                                     </div>
                                     <div class="card-footer d-flex justify-content-around">                                        
                                         <a href=""><font-awesome-icon :icon="['fab', 'facebook']" /></a>
@@ -101,10 +101,10 @@
                                     <img src="https://images.unsplash.com/photo-1547147607-6eab7b49f3ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <div class="d-flex">
-                                        <h5 class="card-title">Mikaela.L</h5> <h6 class="position ml-auto">COO</h6>
+                                        <h5 class="card-title">M.L.Valencia</h5> <h6 class="position ml-auto">COO</h6>
                                     </div>
                                     <hr style="margin-top:0;">
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text">People often say that motivation doesn’t last. Well, neither does bathing. That’s why we recommend it daily</p>
                                     </div>
                                     <div class="card-footer d-flex justify-content-around">                                        
                                         <a href=""><font-awesome-icon :icon="['fab', 'facebook']" /></a>
@@ -118,10 +118,10 @@
                                     <img src="https://images.unsplash.com/photo-1551467302-8e70f83e8ec6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <div class="d-flex">
-                                        <h5 class="card-title">Maria.C</h5> <h6 class="position ml-auto">CMO</h6>
+                                        <h5 class="card-title">C.S.Cassidy</h5> <h6 class="position ml-auto">CMO</h6>
                                     </div>
                                     <hr style="margin-top:0;">
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text">If you are an artist, learn science. If you are a scientist, cultivate art</p>
                                     </div>
                                     <div class="card-footer d-flex justify-content-around">                                        
                                         <a href=""><font-awesome-icon :icon="['fab', 'facebook']" /></a>
