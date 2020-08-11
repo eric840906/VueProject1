@@ -1,6 +1,6 @@
 <template>
     <div>
-        
+        <Alert></Alert>
         <Navbar></Navbar>        
         <main role="main">
 
@@ -15,8 +15,7 @@
             </section>
             
             <div class="album py-5 bg-light">
-                <div class="container"> 
-                    <!-- <a href="" @click.prevent="startDrawing">點擊開始抽優惠</a> -->
+                <div class="container">                     
                     
                     <div class="card-deck mb-3 text-center">
                         <VueSlickCarousel v-bind="settings">
@@ -31,13 +30,13 @@
                                         <h2>優惠代碼</h2>
                                         <input type="text" class="code" :value="coupons[0].code" readonly="readonly">
                                         <h3>使用期限:{{coupons[0].due_date}}</h3>
-                                        <a class="btn btn-lg btn-block btn-outline-primary" @click.prevent="copyCode">複製優惠碼</a>
+                                        <a class="btn btn-lg btn-block btn-outline-primary margin-auto" @click.prevent="copyCode">複製優惠碼</a>
                                         
                                     </div>
                                     
                                     <div class="card-footer">
                                         
-                                        <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
+                                        <router-link class="btn btn-lg btn-block btn-outline-primary margin-auto" to="/shoppage/shoppingmain">前往購物區</router-link>
                                         
                                     </div>                                
                                 </div>                            
@@ -53,13 +52,13 @@
                                         <h2>優惠代碼</h2>
                                         <input type="text" class="code" :value="coupons[1].code" readonly="readonly">
                                         <h3>使用期限:{{coupons[1].due_date}}</h3>
-                                        <a class="btn btn-lg btn-block btn-outline-primary" @click.prevent="copyCode">複製優惠碼</a>
+                                        <a class="btn btn-lg btn-block btn-outline-primary margin-auto" @click.prevent="copyCode">複製優惠碼</a>
                                         
                                     </div>
                                     
                                     <div class="card-footer">
                                         
-                                        <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
+                                        <router-link class="btn btn-lg btn-block btn-outline-primary margin-auto" to="/shoppage/shoppingmain">前往購物區</router-link>
                                         
                                     </div>                                
                                 </div>                            
@@ -75,112 +74,24 @@
                                         <h2>優惠代碼</h2>
                                         <input type="text" class="code" :value="coupons[2].code" readonly="readonly">
                                         <h3>使用期限:{{coupons[2].due_date}}</h3>
-                                        <a class="btn btn-lg btn-block btn-outline-primary" @click.prevent="copyCode">複製優惠碼</a>
+                                        <a class="btn btn-lg btn-block btn-outline-primary margin-auto" @click.prevent="copyCode">複製優惠碼</a>
                                         
                                     </div>
                                     
                                     <div class="card-footer">
                                         
-                                        <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
+                                        <router-link class="btn btn-lg btn-block btn-outline-primary margin-auto" to="/shoppage/shoppingmain">前往購物區</router-link>
                                         
                                     </div>                                
                                 </div>                            
                             </div>
                         </VueSlickCarousel>
-                        <!-- <div class="card mb-4 shadow-sm" style="background: antiquewhite;">
-                            <div class="front face" style="backgroundImage:url(https://i.pinimg.com/564x/c1/59/b4/c159b4738dae9c9d8d6417228024de8d.jpg)"></div>                                                          
-                            <div class="back">
-                                <div class="card-header" :class="{'small-discount-title':coupons[0].discount<=20, 'big-discount-title':coupons[0].discount>=50, 'normal-discount-title': coupons[0].discount<50 && coupons[0].discount>20}">
-                                    <h4 class="my-0 font-weight-normal">{{coupons[0].title}}</h4>
-                                </div>
-                                <div class="card-body" :class="{'small-discount-title':coupons[0].discount<=20, 'big-discount-title':coupons[0].discount>=50, 'normal-discount-title': coupons[0].discount<50 && coupons[0].discount>20}">
-                                    <h1 class="card-title pricing-card-title">{{coupons[0].discount}}%off</h1>
-                                    <h2>優惠代碼</h2>
-                                    <h2>{{coupons[0].code}}</h2>
-                                    <h3>使用期限:{{coupons[0].due_date}}</h3>
-                                    
-                                </div>
-                                <div class="card-footer" style="background: antiquewhite; " >
-                                    <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
-                                </div>                                
-                            </div>                            
-                        </div>
-                        <div class="card mb-4 shadow-sm" style="background: antiquewhite;">
-                            <div class="front face" style="backgroundImage:url(https://i.pinimg.com/564x/c1/59/b4/c159b4738dae9c9d8d6417228024de8d.jpg)"></div>                                                          
-                            <div class="back">
-                                <div class="card-header" :class="{'small-discount-title':coupons[1].discount<=20, 'big-discount-title':coupons[1].discount>=50, 'normal-discount-title': coupons[1].discount<50 && coupons[1].discount>20}">
-                                    <h4 class="my-0 font-weight-normal">{{coupons[1].title}}</h4>
-                                </div>
-                                <div class="card-body" :class="{'small-discount-title':coupons[1].discount<=20, 'big-discount-title':coupons[1].discount>=50, 'normal-discount-title': coupons[1].discount<50 && coupons[1].discount>20}">
-                                    <h1 class="card-title pricing-card-title">{{coupons[1].discount}}%off</h1>
-                                    <h2>優惠代碼</h2>
-                                    <h2>{{coupons[1].code}}</h2>
-                                    <h3>使用期限:{{coupons[1].due_date}}</h3>
-                                    
-                                </div>
-                                <div class="card-footer" style="background: antiquewhite; " >
-                                    <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
-                                </div>                                
-                            </div>                            
-                        </div>
-                        <div class="card mb-4 shadow-sm" style="background: antiquewhite;">
-                            <div class="front face" style="backgroundImage:url(https://i.pinimg.com/564x/c1/59/b4/c159b4738dae9c9d8d6417228024de8d.jpg)"></div>                                                          
-                            <div class="back">
-                                <div class="card-header" :class="{'small-discount-title':coupons[2].discount<=20, 'big-discount-title':coupons[2].discount>=50, 'normal-discount-title': coupons[2].discount<50 && coupons[2].discount>20}">
-                                    <h4 class="my-0 font-weight-normal">{{coupons[2].title}}</h4>
-                                </div>
-                                <div class="card-body" :class="{'small-discount-title':coupons[2].discount<=20, 'big-discount-title':coupons[2].discount>=50, 'normal-discount-title': coupons[2].discount<50 && coupons[2].discount>20}">
-                                    <h1 class="card-title pricing-card-title">{{coupons[2].discount}}%off</h1>
-                                    <h2>優惠代碼</h2>
-                                    <h2>{{coupons[2].code}}</h2>
-                                    <h3>使用期限:{{coupons[2].due_date}}</h3>
-                                    
-                                </div>
-                                <div class="card-footer" style="background: antiquewhite; " >
-                                    <router-link class="btn btn-lg btn-block btn-outline-primary" style="border-radius: 35px;" to="/shoppage/shoppingmain">前往購物區</router-link>
-                                </div>                                
-                            </div>                            
-                        </div> -->
+                       
                     </div>
                     
-                </div>
+                </div>           
                 
-                
-                <!-- <div class="container">
-                    <div class="card darth col-sm-4">
-                        <div class="face front">
-                            <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/261096/Star_Wars_Logo.svg" />
-                            <h2><small>Darth</small><br/>Vader</h2>
-                            <cite>
-                            <a href="http://6kart.deviantart.com/art/Darth-Vader-415281288" target="_blank">Vader Image by 6Kart</a>
-                            </cite>
-                        </div>
-                        <div class="face back">
-                            <img src="http://img.lum.dolimg.com/v1/images/Darth-Vader_6bda9114.jpeg?region=0%2C23%2C1400%2C785&width=768" alt="Image of Darth Vader" />
-                            <div class="description">Once a heroic Jedi Knight, <b>Darth Vader</b> was seduced by the dark side of the Force, became a Sith Lord, and led the Empire’s eradication of the Jedi Order. He remained in service of the Emperor -- the evil Darth Sidious -- for decades, enforcing
-                            his Master’s will and seeking to crush the fledgling Rebel Alliance. But there was still good in him…</div>
-                            <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/261096/Star_Wars_Logo.svg" />
-                        </div>
-                        </div>
-                        <div class="card luke col-sm-4">
-                        <div class="face front">
-                            <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/261096/Star_Wars_Logo.svg" />
-                            <h2><small>Luke</small><br/>Skywalker</h2>
-                            <cite>
-                            <a href="http://salvadortrakal.deviantart.com/art/Luke-Skywalker-352420315" target="_blank">Luke Image by SalvadorTrakal</a>
-                            </cite>
-                        </div>
-                        <div class="face back">
-                            <img src="http://img.lum.dolimg.com/v1/images/Luke-Skywalker_dd9c9f9b.jpeg?region=0%2C0%2C1536%2C864&width=768" alt="Image of luke skywalker" />
-                            <div class="description">
-                            <b>Luke Skywalker</b> was a Tatooine farmboy who rose from humble beginnings to become one of the greatest Jedi the galaxy has ever known. Along with his friends Princess Leia and Han Solo, Luke battled the evil Empire, discovered the truth of his
-                            parentage, and ended the tyranny of the Sith.</div>
-                            <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/261096/Star_Wars_Logo.svg" />
-                        </div>
-                    </div>
-                    
-                </div> -->
-                <!-- <Cart :cartInfo="cartList" :isloading="productStatus.loading" @refreshCart="getCart" @removeItem="removeCart"></Cart> -->
+               
                 
             </div>
             
@@ -209,12 +120,14 @@ import Navbar from './HomeNav'
 import Gotop from './GoTop'
 import Footer from './Footer'
 import VueSlickCarousel from 'vue-slick-carousel'
+import Alert from './Alert'
 export default {
     components:{
         Navbar,
         Gotop,
         Footer,
-        VueSlickCarousel
+        VueSlickCarousel,
+        Alert
     },
     data(){
         return{
@@ -347,9 +260,9 @@ export default {
             try {
                 var successful = document.execCommand('copy');
                 var msg = successful ? 'successful' : 'unsuccessful';
-                alert('Testing code was copied ' + msg);
+                this.$bus.$emit('message:push','成功將優惠碼複製到剪貼簿','success');
             } catch (err) {
-                alert('Oops, unable to copy');
+                this.$bus.$emit('message:push','複製失敗','danger');
             }
             
             
@@ -536,17 +449,16 @@ export default {
     border: none;
     background: none;
 }
-
-.card-footer{
-    
-        .btn{
-            &:hover{
-            background-color: black;
-            border: none;
-            color: #ffdf76;
-            }
-        }
-    
+.btn{
+    width: 70%;
+    &:hover{
+    background-color: black;
+    border: none;
+    color: #ffdf76;
+    }
+}
+.margin-auto{
+    margin: 0 auto;
 }
 
 </style>
