@@ -145,7 +145,21 @@ export default {
 .scroll-menu{
     overflow-y: auto;
     height: 35vh;
+    
 }
+.scroll-menu::-webkit-scrollbar {
+    width: 1em;
+    height: 1em;
+    }
+.scroll-menu::-webkit-scrollbar-track {
+        -webkit-box-shadow: transparent;
+    }
+    
+.scroll-menu::-webkit-scrollbar-thumb {
+        background-image: radial-gradient(#ffba5c, transparent);
+        outline: 1px solid white;
+        border-radius: 135px;
+    }
 
 .cartcount{
     position: absolute;
