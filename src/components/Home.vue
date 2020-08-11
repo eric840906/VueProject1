@@ -87,7 +87,7 @@
   <div class="container marketing" >
     <h2>Customer Comments</h2>
     <VueSlickCarousel v-bind="settings" :arrows="true">
-      <div v-for="item in UserComments" :key="item.id">
+      <div v-for="item in randomCarousel" :key="item.id">
         <div class="col-12 text-center">
         <img src="../assets/image/comment7.png" class="user-image d-inline">
         <h2 class="grading"><font-awesome-icon  v-for="item in Number(item.data.grading)" :key="item.id" icon="star" /></h2>
@@ -165,7 +165,12 @@ export default {
               
             }
           }
-        ],
+        ],        
+        comparisonA:'',
+        comparisonB:'',
+        randomCarousel:[
+          
+        ]
         
       }
     },
@@ -174,13 +179,42 @@ export default {
             const vm = this;
             let api = 'https://json-server-test999.herokuapp.com/posts'
             this.$http.get(api).then((response) => {
+                vm.comparisonA=Math.random()
+                vm.comparisonB=Math.random()
                 console.log(response)                
-                vm.UserComments=response.data;       
+                vm.UserComments=response.data;
+                this.shuffleCarousel();
+                this.getNewCarousel();
+                
+                
+                      
                 
                 
             }) 
+      },      
+      shuffleCarousel(){
+            const vm=this;                    
+            vm.UserComments.sort(function(){
+                
+                if (vm.comparisonA>vm.comparisonB) {
+                    return -1;
+                }
+                if (vm.comparisonA<vm.comparisonB) {
+                    return 1;
+                }
+                // a must be equal to b
+                return 0;
+            })
       },
-    },
+      getNewCarousel(){
+            const vm=this;
+                for(let i=0; i<6; i++){
+                let a=parseInt(Math.random()*vm.UserComments.length);
+                vm.randomCarousel.push(vm.UserComments[a])
+                vm.UserComments.splice(a,1)
+                }
+      }
+    },     
     mounted(){
       $(window).scroll( function(){
         $('.concept').each( function(i){
@@ -203,8 +237,11 @@ export default {
       $('#loadingModal').modal('hide')    
     },
     created(){
-      this.commentGet();
+      this.commentGet();      
+      
+      
     }
+    
 }
 </script>
 

@@ -98,16 +98,16 @@
 
             <div class="d-block my-3">
                 <div class="custom-control custom-radio">
-                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                    <label class="custom-control-label" for="credit">Credit card</label>
+                    <input id="method1" name="paymentMethod" type="radio" class="custom-control-input">
+                    <label class="custom-control-label" for="method1">Credit card</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                    <label class="custom-control-label" for="debit">Debit card</label>
+                    <input id="method2" name="paymentMethod" type="radio" class="custom-control-input"> 
+                    <label class="custom-control-label" for="method2">Debit card</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                    <label class="custom-control-label" for="paypal">Paypal</label>
+                    <input id="method3" name="paymentMethod" type="radio" class="custom-control-input" >
+                    <label class="custom-control-label" for="method3">Paypal</label>
                 </div>
             </div>
             <div class="row">
@@ -121,8 +121,10 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="cc-number">信用卡卡號</label>
-                    <input type="text" name="credit_field" class="form-control" id="cc-number" placeholder="" :class="{'is-invalid': errors.has('credit_field')}" v-validate="'credit_card'" >
+                    <input type="text" name="credit_field" class="form-control" id="cc-number" placeholder="" :class="{'is-invalid': errors.has('credit_field')}" v-validate="'required'" >
                     <span class="text-danger" v-if="errors.has('credit_field')">Credit card number is required</span>                        
+                    <!-- <input type="text" name="credit_field" class="form-control" id="cc-number" placeholder="" :class="{'is-invalid': errors.has('credit_field')}" v-validate="'credit_card'" >
+                    <span class="text-danger" v-if="errors.has('credit_field')">Credit card number is required</span> -->
                 </div>
             </div>
             <div class="row">

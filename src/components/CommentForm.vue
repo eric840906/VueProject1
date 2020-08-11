@@ -85,8 +85,11 @@ export default {
             const vm = this;
             let api = 'https://json-server-test999.herokuapp.com/posts'
             this.$http.post(api, {data: vm.UserComments}).then((response) => {
+                if(response){
                 console.log('上傳成功')
-                vm.$router.push('/')
+                this.$bus.$emit('message:push','謝謝你的評價，之後可以在首頁看到喔!','success');
+                setTimeout( () => vm.$router.push('/'), 2500);
+                }
             }) 
         },
         commentGet(){
