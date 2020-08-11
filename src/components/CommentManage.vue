@@ -48,7 +48,7 @@ export default {
     methods:{
         commentGet(){
             const vm = this;
-            let api = 'http://localhost:3000/posts'
+            let api = 'https://json-server-test999.herokuapp.com/posts'
             this.$http.get(api).then((response) => {
                 console.log(response)
                 vm.UserComments=response.data
@@ -56,7 +56,7 @@ export default {
         },
         commentDelete(id){
             const vm = this;
-            let api = `http://localhost:3000/posts/${id}`
+            let api = `https://json-server-test999.herokuapp.com/posts/${id}`
             this.$http.delete(api).then((response) => {
                 console.log(response)
                 vm.commentGet();

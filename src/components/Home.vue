@@ -84,7 +84,7 @@
   </section>  
 
   <hr class="featurette-divider">
-  <div class="container marketing">
+  <div class="container marketing" >
     <h2>Customer Comments</h2>
     <VueSlickCarousel v-bind="settings" :arrows="true">
       <div v-for="item in UserComments" :key="item.id">
@@ -162,21 +162,24 @@ export default {
         UserComments:[
           {
             data:{
-              grading:{}
+              
             }
           }
         ],
+        
       }
     },
     methods:{
       commentGet(){
             const vm = this;
-            let api = 'http://localhost:3000/posts'
+            let api = 'https://json-server-test999.herokuapp.com/posts'
             this.$http.get(api).then((response) => {
-                console.log(response)
-                vm.UserComments=response.data
+                console.log(response)                
+                vm.UserComments=response.data;       
+                
+                
             }) 
-        },
+      },
     },
     mounted(){
       $(window).scroll( function(){
@@ -194,7 +197,8 @@ export default {
             
         }); 
       })
-    },
+    },    
+    
     beforeCreate(){
       $('#loadingModal').modal('hide')    
     },

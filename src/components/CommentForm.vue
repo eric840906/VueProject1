@@ -33,22 +33,22 @@
                         <div class="form-group">
                             <label for="grading">評價</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" v-model="UserComments.grading">
+                                <input class="form-check-input" type="radio" name="grading" id="inlineRadio1" value=1 v-model="UserComments.grading" required>
                                 <label class="form-check-label mr-10" for="inlineRadio1">1</label>
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" v-model="UserComments.grading">
+                                <input class="form-check-input" type="radio" name="grading" id="inlineRadio2" value=2 v-model="UserComments.grading">
                                 <label class="form-check-label mr-10" for="inlineRadio2">2</label>
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3" v-model="UserComments.grading">
+                                <input class="form-check-input" type="radio" name="grading" id="inlineRadio3" value=3 v-model="UserComments.grading">
                                 <label class="form-check-label mr-10" for="inlineRadio3">3</label>
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4" v-model="UserComments.grading">
+                                <input class="form-check-input" type="radio" name="grading" id="inlineRadio4" value=4 v-model="UserComments.grading">
                                 <label class="form-check-label mr-10" for="inlineRadio4">4</label>
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5" v-model="UserComments.grading">
+                                <input class="form-check-input" type="radio" name="grading" id="inlineRadio5" value=5 v-model="UserComments.grading">
                                 <label class="form-check-label mr-10" for="inlineRadio5">5</label>
                             </div>
                         </div>           
                                           
                         <div class="form-group">
                             <label for="comment">留言</label>
-                            <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="UserComments.message"></textarea>
+                            <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="UserComments.message" required></textarea>
                         </div>
                         <button class="btn top-notice-btn" style="width:100%;">送出留言</button>
                     </form>
@@ -83,7 +83,7 @@ export default {
     methods:{
         commentPost(){
             const vm = this;
-            let api = 'http://localhost:3000/posts'
+            let api = 'https://json-server-test999.herokuapp.com/posts'
             this.$http.post(api, {data: vm.UserComments}).then((response) => {
                 console.log('上傳成功')
                 vm.$router.push('/')
@@ -91,7 +91,7 @@ export default {
         },
         commentGet(){
             const vm = this;
-            let api = 'http://localhost:3000/posts'
+            let api = 'https://json-server-test999.herokuapp.com/posts'
             this.$http.get(api).then((response) => {
                 console.log(response)
             }) 
