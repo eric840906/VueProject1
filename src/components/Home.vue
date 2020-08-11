@@ -141,7 +141,7 @@ export default {
           "dots": true,
           "infinite": true,
           "slidesToShow": 3,
-          "slidesToScroll": 1,
+          "slidesToScroll": 1,          
           "autoplay": true,
           "speed": 2000,
           "autoplaySpeed": 2000,
@@ -150,6 +150,8 @@ export default {
             {
               "breakpoint": 500,
               "settings": {
+                    
+                    "autoplay": true,
                     "slidesToShow": 1, //一次顯示1個
                     "slidesToScroll": 1,//切換下一頁時移動1個
               }
@@ -208,11 +210,20 @@ export default {
       },
       getNewCarousel(){
             const vm=this;
-                for(let i=0; i<6; i++){
-                let a=parseInt(Math.random()*vm.UserComments.length);
-                vm.randomCarousel.push(vm.UserComments[a])
-                vm.UserComments.splice(a,1)
+                if(vm.randomCarousel.length>=6){
+                  for(let i=0; i<6; i++){
+                  let a=parseInt(Math.random()*vm.UserComments.length);
+                  vm.randomCarousel.push(vm.UserComments[a])
+                  vm.UserComments.splice(a,1)
+                  }
+                }else if(vm.randomCarousel.length<6){
+                  for(let i=0; i<randomCarousel.length; i++){
+                  let a=parseInt(Math.random()*vm.UserComments.length);
+                  vm.randomCarousel.push(vm.UserComments[a])
+                  vm.UserComments.splice(a,1)
+                  }
                 }
+                
       }
     },     
     mounted(){

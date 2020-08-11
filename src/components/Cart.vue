@@ -8,55 +8,58 @@
             
             
             <div class="cartlist">
-                <table class="table" style="margin: 30px auto; width:70%">
-            <thead>
-                <th></th>
-                <th>品名</th>
-                <th width='60'>數量</th>
-                <th width='40'>價格</th>
-                
-            </thead>
-            <tbody>
-                <tr v-for="item in cartInfo.data.carts" :key="item.id">
-                <td class="align-middle">
-                    <button type="button" class="btn btn-outline-danger btn-sm" @click="removeItem(item.id)">
-                    <i class="far fa-trash-alt"></i>                
-                    </button>
-                </td>
-                <td class="align-middle">
-                    {{ item.product.title }}                    
-                </td>
-                <td class="align-middle">{{ item.qty }}{{ item.product.unit }}</td>
-                <td class="align-middle text-right">{{ item.final_total }}</td>                
-                
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                <td></td>
-                <td colspan="2" class="text-right">總計</td>
-                <td class="text-right">{{ cartInfo.data.total }}</td>
-                </tr>
-                <tr v-if="cartInfo.data.total!=cartInfo.data.final_total">
-                <td class="text-right text-success">已使用優惠</td>
-                <td colspan="2" class="text-right text-success">折扣價</td>
-                <td class="text-right text-success">{{ Math.round(cartInfo.data.final_total) }}</td>
-                </tr>
-                
-            </tfoot>
-            
-            
-            
-            </table>
-            <div class="input-group mb-5 input-group-sm" style="margin: auto; width: 70%;">
-                <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="coupon_code">
-                <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" @click="applyCoupon">
-                套用優惠碼
-                </button>
+                <div class="scroll-menu">
+                    <table class="table" style="margin: 30px auto; width:70%">
+                        <thead>
+                            <th></th>
+                            <th>品名</th>
+                            <th width='60'>數量</th>
+                            <th width='40'>價格</th>
+                            
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in cartInfo.data.carts" :key="item.id">
+                            <td class="align-middle">
+                                <button type="button" class="btn btn-outline-danger btn-sm" @click="removeItem(item.id)">
+                                <i class="far fa-trash-alt"></i>                
+                                </button>
+                            </td>
+                            <td class="align-middle">
+                                {{ item.product.title }}                    
+                            </td>
+                            <td class="align-middle">{{ item.qty }}{{ item.product.unit }}</td>
+                            <td class="align-middle text-right">{{ item.final_total }}</td>                
+                            
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                            <td></td>
+                            <td colspan="2" class="text-right">總計</td>
+                            <td class="text-right">{{ cartInfo.data.total }}</td>
+                            </tr>
+                            <tr v-if="cartInfo.data.total!=cartInfo.data.final_total">
+                            <td class="text-right text-success">已使用優惠</td>
+                            <td colspan="2" class="text-right text-success">折扣價</td>
+                            <td class="text-right text-success">{{ Math.round(cartInfo.data.final_total) }}</td>
+                            </tr>                    
+                        </tfoot>                                
+                    </table>
                 </div>
+            
+            <div class="input-group input-group-sm" style="margin:50px auto; width: 70%;">
+                <div class="d-flex">
+                    <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="coupon_code" style="flex:1;">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" @click="applyCoupon">
+                        套用優惠碼
+                        </button>
+                    </div>
+                </div>
+                
+                <router-link class="pay-btn text-decoration-none" to="/paymentpage/paymentmake">&emsp;結帳&emsp;</router-link>
             </div>
-            <router-link class="pay-btn text-decoration-none" to="/paymentpage/paymentmake">&emsp;結帳&emsp;</router-link>
+            
             </div>
             <a href="#" class="carttrigger">            
                 <i class="carticon fas fa-shopping-cart" v-if="!isloading"></i>
@@ -139,6 +142,11 @@ export default {
     margin-bottom:5rem !important;
 }
 
+.scroll-menu{
+    overflow-y: auto;
+    height: 35vh;
+}
+
 .cartcount{
     position: absolute;
     right: -6px;
@@ -200,12 +208,10 @@ export default {
 }
 
 .pay-btn{
-    display: inline-block;    
-    position: absolute;
-    bottom: 3%;
-    left: 19%;    
-    border: 1px solid black;
-    border-radius: 20px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;    
     background-color: white;    
     transition: 0.3s;
     &:hover{
