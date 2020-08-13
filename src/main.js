@@ -50,7 +50,9 @@ Vue.component("l-icon", LIcon);
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.filter('currency',currencyFilter)
 Vue.use(VueAxios, axios)
-Vue.use(VeeValidate)
+Vue.use(VeeValidate, {
+  events: 'input|blur',
+});
 VeeValidate.Validator.localize('zh_TW',zhTW_Validate)
 
 import { Icon } from "leaflet";

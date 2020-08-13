@@ -210,19 +210,13 @@ export default {
       },
       getNewCarousel(){
             const vm=this;
-                if(vm.randomCarousel.length>=6){
-                  for(let i=0; i<6; i++){
+                
+                  for(let i=0; i<vm.UserComments.length; i++){
                   let a=parseInt(Math.random()*vm.UserComments.length);
                   vm.randomCarousel.push(vm.UserComments[a])
                   vm.UserComments.splice(a,1)
                   }
-                }else if(vm.randomCarousel.length<6){
-                  for(let i=0; i<randomCarousel.length; i++){
-                  let a=parseInt(Math.random()*vm.UserComments.length);
-                  vm.randomCarousel.push(vm.UserComments[a])
-                  vm.UserComments.splice(a,1)
-                  }
-                }
+                
                 
       }
     },     

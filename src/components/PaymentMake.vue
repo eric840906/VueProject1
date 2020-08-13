@@ -98,7 +98,7 @@
 
             <div class="d-block my-3">
                 <div class="custom-control custom-radio">
-                    <input id="method1" name="paymentMethod" type="radio" class="custom-control-input">
+                    <input id="method1" name="paymentMethod" type="radio" class="custom-control-input" required>
                     <label class="custom-control-label" for="method1">Credit card</label>
                 </div>
                 <div class="custom-control custom-radio">
@@ -235,6 +235,7 @@ export default {
         
     },
     created(){
+        
         this.getCart()
     }
         
