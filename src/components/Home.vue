@@ -210,12 +210,16 @@ export default {
       },
       getNewCarousel(){
             const vm=this;
-                
-                  for(let i=0; i<vm.UserComments.length; i++){
+                if(vm.UserComments.length>3){
+                  for(let i=0; i<3; i++){
                   let a=parseInt(Math.random()*vm.UserComments.length);
                   vm.randomCarousel.push(vm.UserComments[a])
                   vm.UserComments.splice(a,1)
                   }
+                }else{
+                  vm.randomCarousel=vm.UserComments;
+                }
+                  
                 
                 
       }
