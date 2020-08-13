@@ -57,7 +57,8 @@
                     </div>
                 </div>
                 
-                <router-link class="pay-btn text-decoration-none" to="/paymentpage/paymentmake" >&emsp;結帳&emsp;</router-link>
+                <router-link class="pay-btn text-decoration-none"  to="/paymentpage/paymentmake" >&emsp;結帳&emsp;</router-link>
+                
             </div>
             
             </div>
@@ -111,6 +112,7 @@ export default {
              
             })
         },
+        
 
     },
     mounted(){
@@ -125,7 +127,7 @@ export default {
              
         });
         $('body').click(function (e) { 
-            e.preventDefault();
+            
             $('.cartlist.show').removeClass('show');
             
         });

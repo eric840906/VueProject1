@@ -17,7 +17,7 @@
                 <div class="container">
                     <router-view></router-view>
                 </div>
-                <!-- <Cart :cartInfo="cartList" :isloading="productStatus.loading" @refreshCart="getCart" @removeItem="removeCart"></Cart> -->
+                
                 
                 <GoTop></GoTop>
             </div>
@@ -168,25 +168,7 @@ export default {
 
         
     },
-    mounted(){
-        $('.carttrigger').click(function (e) { 
-            e.preventDefault();
-            
-        });
-        $('.cartframe').click(function (e) { 
-            e.preventDefault();
-            e.stopPropagation();
-            $('.cartlist').addClass('show');
-             
-        });
-        $('body').click(function (e) { 
-            e.preventDefault();
-            $('.cartlist.show').removeClass('show');
-            
-        });
-        
-        
-    },
+   
     computed:{
         filterProducts: function(){
             if(this.visibility=='all'){

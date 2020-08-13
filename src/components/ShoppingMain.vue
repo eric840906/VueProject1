@@ -246,25 +246,7 @@ export default {
 
         
     },
-    mounted(){
-        $('.carttrigger').click(function (e) { 
-            e.preventDefault();
-            
-        });
-        $('.cartframe').click(function (e) { 
-            e.preventDefault();
-            e.stopPropagation();
-            $('.cartlist').addClass('show');
-             
-        });
-        $('body').click(function (e) { 
-            e.preventDefault();
-            $('.cartlist.show').removeClass('show');
-            
-        });
-        
-        
-    },
+    
     computed:{
         filterProducts: function(){
             if(this.visibility=='all'){
